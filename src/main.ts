@@ -21,6 +21,7 @@ const formatBlock = async (b?: BlockEntity | IHookEvent) => {
   if (!block) return
 
   const newContent = pangu.spacing(block.content)
+  console.log('>>>', block.content, newContent)
   logseq.Editor.updateBlock(block.uuid, newContent)
 }
 
