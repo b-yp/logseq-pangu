@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/b-yp/logseq-pangu/compare/v1.0.0...v1.0.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* Use remark-pangu instead of pangu.js ([e8ee3b6](https://github.com/b-yp/logseq-pangu/commit/e8ee3b6560c15005d4a7860882e30d0d93844eea))
+
 # 1.0.0 (2023-11-05)
 
 
