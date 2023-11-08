@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/b-yp/logseq-pangu/compare/v1.1.0...v1.1.1) (2023-11-08)
+
+
+### Bug Fixes
+
+* Fix wasm path error ([03054eb](https://github.com/b-yp/logseq-pangu/commit/03054eb35fb49676fe268019e74b85b70ccc64c7))
+
 # [1.1.0](https://github.com/b-yp/logseq-pangu/compare/v1.0.1...v1.1.0) (2023-11-08)
 
 
