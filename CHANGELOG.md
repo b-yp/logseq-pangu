@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/b-yp/logseq-pangu/compare/v1.0.1...v1.1.0) (2023-11-08)
+
+
+### Features
+
+* Format MarkDown using autocorrect-wasm ([282dc0e](https://github.com/b-yp/logseq-pangu/commit/282dc0e563f773786a552b68d2471683d85b5443))
+
 ## [1.0.1](https://github.com/b-yp/logseq-pangu/compare/v1.0.0...v1.0.1) (2023-11-06)
 
 
