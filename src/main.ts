@@ -1,17 +1,13 @@
 import '@logseq/libs'
 import { BlockEntity, IHookEvent } from '@logseq/libs/dist/LSPlugin'
-
-import { remark } from 'remark'
-// @ts-ignore
-import pangu from 'remark-pangu'
+import init, { format } from 'autocorrect-wasm'
 
 import { deepFirstTraversal } from './utils'
 import { logseq as PL } from "../package.json";
-import { isModuleNamespaceObject } from 'util/types'
 
 const pluginId = PL.id;
 
-remark().use(pangu)
+await init('../pkg/autocorrect_wasm_bg.wasm')
 
 const formatPage = async (e: IHookEvent) => {
   const tree = await logseq.Editor.getPageBlocksTree(e.page)
@@ -26,11 +22,9 @@ const formatBlock = async (b?: BlockEntity | IHookEvent) => {
   const block = await logseq.Editor.getBlock(b?.uuid)
   if (!block) return
 
-  // @ts-ignore
-  remark().use(pangu).process(block.content, (_, file: any) => {
-    // TODO
-    logseq.Editor.updateBlock(block.uuid, String(file).replace(/==\s+/g, '==').replace(/\s+==/g, '=='))
-  });
+  // TODO: If the tag name is mixed in Chinese and English, it will also be processed
+  const newContent = format(block.content)
+  logseq.Editor.updateBlock(block.uuid, newContent)
 }
 
 const main = () => {
