@@ -7,7 +7,7 @@ import { logseq as PL } from "../package.json";
 
 const pluginId = PL.id;
 
-await init('/node_modules/autocorrect-wasm/autocorrect_wasm_bg.wasm')
+await init()
 
 const formatPage = async (e: IHookEvent) => {
   const tree = await logseq.Editor.getPageBlocksTree(e.page)
