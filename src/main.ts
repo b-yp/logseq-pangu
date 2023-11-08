@@ -1,6 +1,6 @@
 import '@logseq/libs'
 import { BlockEntity, IHookEvent } from '@logseq/libs/dist/LSPlugin'
-import init, { format } from 'autocorrect-wasm'
+import init, { format } from '../pkg/autocorrect_wasm'
 
 import { deepFirstTraversal } from './utils'
 import { logseq as PL } from "../package.json";
