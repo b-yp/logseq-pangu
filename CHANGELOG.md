@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/b-yp/logseq-pangu/compare/v1.1.1...v1.1.2) (2023-11-08)
+
+
+### Bug Fixes
+
+* autocorrect-wasm uses npm packages instead of local packages ([fc21add](https://github.com/b-yp/logseq-pangu/commit/fc21add6a867d3d67aa9f231566a0b51c6999c83))
+
 ## [1.1.1](https://github.com/b-yp/logseq-pangu/compare/v1.1.0...v1.1.1) (2023-11-08)
 
 
