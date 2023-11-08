@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.0.14
     version: 0.0.14
   autocorrect-wasm:
-    specifier: link:pkg
-    version: link:pkg
+    specifier: ^1.0.0
+    version: 1.0.0
 
 devDependencies:
   '@semantic-release/changelog':
@@ -1169,6 +1169,10 @@ packages:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /autocorrect-wasm@1.0.0:
+    resolution: {integrity: sha512-fJHO+lgsM1EBpRNsa54CLg33s+K/4afQgj6YbHLWsPYXjgHZH2jhf9xghMdNRrJJ4O60O+UIl8U67VO2tvE7nQ==}
+    dev: false
 
   /autoprefixer@10.4.14(postcss@8.4.23):
     resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}

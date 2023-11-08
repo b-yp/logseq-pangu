@@ -1,13 +1,13 @@
 import '@logseq/libs'
 import { BlockEntity, IHookEvent } from '@logseq/libs/dist/LSPlugin'
-import init, { format } from '../pkg/autocorrect_wasm'
+import init, { format } from 'autocorrect-wasm';
 
 import { deepFirstTraversal } from './utils'
 import { logseq as PL } from "../package.json";
 
 const pluginId = PL.id;
 
-await init('../pkg/autocorrect_wasm_bg.wasm')
+await init('/node_modules/autocorrect-wasm/autocorrect_wasm_bg.wasm')
 
 const formatPage = async (e: IHookEvent) => {
   const tree = await logseq.Editor.getPageBlocksTree(e.page)
