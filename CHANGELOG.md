@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/b-yp/logseq-pangu/compare/v1.1.3...v1.1.4) (2023-11-11)
+
+
+### Bug Fixes
+
+* Fix the issue where linked references and tags are also formatted ([334fd7e](https://github.com/b-yp/logseq-pangu/commit/334fd7e62356a3ab45f41f2ffe7a45695ae4d45d))
+
 ## [1.1.3](https://github.com/b-yp/logseq-pangu/compare/v1.1.2...v1.1.3) (2023-11-08)
 
 
