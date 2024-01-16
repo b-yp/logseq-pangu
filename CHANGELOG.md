@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/b-yp/logseq-pangu/compare/v1.1.4...v1.2.0) (2024-01-16)
+
+
+### Features
+
+* Added support for shortcut keys and introduced notifications ([83446aa](https://github.com/b-yp/logseq-pangu/commit/83446aa952dc641766385e56674e05f7529c01a9))
+
 ## [1.1.4](https://github.com/b-yp/logseq-pangu/compare/v1.1.3...v1.1.4) (2023-11-11)
 
 
