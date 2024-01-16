@@ -4,7 +4,8 @@ import init, { format } from 'autocorrect-wasm';
 import { v4 as uuidv4 } from 'uuid'
 
 import { deepFirstTraversal } from './utils'
-import { logseq as PL } from "../package.json";
+import { settings } from './settings'
+import { logseq as PL } from '../package.json'
 
 const pluginId = PL.id;
 
@@ -14,13 +15,15 @@ const formatPage = async (e: IHookEvent) => {
   const tree = await logseq.Editor.getPageBlocksTree(e.page)
   if (!tree.length) return
 
-  deepFirstTraversal(tree, (block) => {
+  await deepFirstTraversal(tree, (block) => {
     if (!block.content) return
-    formatBlock(block)
+    formatBlock(false, block)
   })
+  
+  logseq.UI.showMsg('Format page successful 🎉')
 }
 
-const formatBlock = async (b?: BlockEntity | IHookEvent) => {
+const formatBlock = async (isToast: boolean, b?: BlockEntity | IHookEvent) => {
   const block = await logseq.Editor.getBlock(b?.uuid)
   if (!block) return
 
@@ -57,16 +60,35 @@ const formatBlock = async (b?: BlockEntity | IHookEvent) => {
   })
 
   logseq.Editor.updateBlock(block.uuid, formattedContent)
+
+  if (!isToast) return
+
+  logseq.UI.showMsg('Format block successful 🎉')
 }
 
 const main = () => {
   console.info(`#${pluginId}: MAIN`);
 
-  logseq.Editor.registerSlashCommand('📄 Pangu Format', formatBlock)
+  logseq.useSettingsSchema(settings);
+  const shortcutKey = logseq.settings?.['shortcutKey']
 
-  logseq.Editor.registerBlockContextMenuItem('📄 Pangu Format', formatBlock)
+  logseq.Editor.registerSlashCommand('📄 Pangu Format Block', e => formatBlock(true, e))
 
-  logseq.App.registerPageMenuItem('📄 Pangu Format', formatPage)
+  logseq.Editor.registerBlockContextMenuItem('📄 Pangu Format Block', e => formatBlock(true, e))
+
+  logseq.Editor.registerSlashCommand('📄 Pangu Format Page', formatPage)
+
+  logseq.App.registerPageMenuItem('📄 Pangu Format Page', formatPage)
+
+  logseq.App.registerCommandShortcut(
+    {
+      binding: shortcutKey,
+    },
+    async () => {
+      const page = await logseq.Editor.getCurrentPage()
+      formatPage({ page: page?.name })
+    }
+  )
 }
 
 logseq.ready(main).catch(console.error);

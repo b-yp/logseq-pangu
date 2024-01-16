@@ -8,6 +8,16 @@
   > - https://eddy.lu/posts/pangu/
   > - https://blog.pigfarm.top/2022/10/11/pan-gu-zhi-bai/
 
+- ## 使用
+
+  - Block
+    - 使用斜杠命令，输入：`📄 Pangu Format Block`
+    - 使用块右键菜单，点击：`📄 Pangu Format Block`
+  - Page
+    - 使用斜杠命令，输入：`📄 Pangu Format Page`
+    - 使用页面右键菜单，点击：`📄 Pangu Format Page`
+    - 使用快捷键，默认：`shift + alt + f`
+    
 - ## 演示
 
   ![demo](./loseq-pangu-demo.gif)
@@ -15,8 +25,7 @@
 - ## 鸣谢
 
   - https://github.com/huacnlee/autocorrect
-    - 此插件是基于 AutoCorrect 做格式化的
-		- (pangu.js 不支持 MarkDown)
+    - 此插件是基于 AutoCorrect 做格式化的 (pangu.js 不支持 MarkDown)
 
 - ## 许可证
   - [MIT](https://choosealicense.com/licenses/mit/)
